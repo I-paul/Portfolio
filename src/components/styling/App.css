@@ -1,0 +1,66 @@
+:root {
+    /* Main Color Palette */
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #edf2f0;
+    --text-primary: #2d3436;
+    --text-secondary: #636e72;
+    --accent-green: #1abc9c;
+    --accent-light-green: #e8f5f2;
+    --accent-dark-green: #16a085;
+    --neutral: #f1f2f6;
+    --border: #dfe6e9;
+    
+    /* Gradient Text Variables */
+    --gradient-subtle: linear-gradient(135deg, #2d3436 0%, #1abc9c 100%);
+    --gradient-teal-blue: linear-gradient(135deg, #0a7c6e 0%, #3498db 100%);
+    --gradient-emerald: linear-gradient(135deg, #16a085 0%, #2c3e50 100%);
+}
+html{
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background: var(--bg-secondary);
+}
+
+/* landing styles */
+#home{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#home::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(135deg, #0a7c6e 0%, #3498db 100%) ;
+    background-size: 300% 300%;
+    animation: background-animate 5s linear infinite;
+    z-index: -1;
+}
+@keyframes background-animate {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+#home h1{
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    transition: 0.8s all ease-in-out;
+}
+#home h1:hover{
+    color: var(--text-secondary);
+}
